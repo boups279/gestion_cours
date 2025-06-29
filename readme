@@ -1,8 +1,23 @@
-django-admin startproject gestion_cours
-pip install django
-Créer un environnement virtuel (recommandé) :
+# django-admin startproject gestion_cours
+# pip install django
+# Créer un environnement virtuel (recommandé) :
 
-python -m venv venv
-source venv/bin/activate  # Sur macOS/Linux
-# ou
-venv\Scripts\activate     # Sur Windows
+# python -m venv venv
+# source venv/bin/activate  # Sur macOS/Linux
+# # ou
+# venv\Scripts\activate     # Sur Windows
+
+
+# ✅ Étape suivante : Appliquer les migrations
+
+# Exécute cette commande :
+
+# python manage.py migrate
+
+# Cela va créer les tables nécessaires pour :
+
+#     l'administration Django,
+
+#     la gestion des utilisateurs (auth_user),
+
+#     les sessions, permissions, etc.

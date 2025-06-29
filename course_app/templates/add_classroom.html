@@ -1,0 +1,11 @@
+<form method="post">
+  {% csrf_token %}
+  {% if error %}<p style="color:red;">{{ error }}</p>{% endif %}
+  <label for="nom">Nom de la salle :</label>
+  <input type="text" name="nom" id="nom" value="{{ nom|default:'' }}" required><br>
+
+  <label for="capacite">Capacité :</label>
+  <input type="number" name="capacite" id="capacite" value="{{ capacite|default:'' }}" required><br>
+
+  <button type="submit">Ajouter</button>
+</form>

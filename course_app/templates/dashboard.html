@@ -1,0 +1,6 @@
+<h1>Liste des cours</h1>
+<ul>
+  {% for c in courses %}
+    <li>{{ c.nom }} - {{ c.filiere.nom }} (Salle : {{ c.salle.nom }})</li>
+  {% endfor %}
+</ul>

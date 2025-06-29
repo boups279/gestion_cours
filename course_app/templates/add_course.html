@@ -1,0 +1,31 @@
+<form method="post">
+  {% csrf_token %}
+
+  {% if error %}
+  <p style="color:red;">{{ error }}</p>
+  {% endif %}
+
+  <label for="nom">Nom du cours :</label>
+  <input type="text" id="nom" name="nom" value="{{ nom|default:'' }}" required><br>
+
+  <label for="description">Description :</label>
+  <textarea id="description" name="description" required>{{ description|default:'' }}</textarea><br>
+
+  <label for="filiere">Filière :</label>
+  <select id="filiere" name="filiere" required>
+    <option value="">--Choisissez une filière--</option>
+    {% for f in filieres %}
+      <option value="{{ f.id }}" {% if f.id|stringformat:"s" == filiere_id %}selected{% endif %}>{{ f.nom }}</option>
+    {% endfor %}
+  </select><br>
+
+  <label for="salle">Salle :</label>
+  <select id="salle" name="salle" required>
+    <option value="">--Choisissez une salle--</option>
+    {% for s in salles %}
+      <option value="{{ s.id }}" {% if s.id|stringformat:"s" == salle_id %}selected{% endif %}>{{ s.nom }}</option>
+    {% endfor %}
+  </select><br>
+
+  <button type="submit">Ajouter le cours</button>
+</form>
