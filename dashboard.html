@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Course Management Dashboard</h1>
+    <h2>Courses</h2>
+    <ul>
+    {% for course in courses %}
+        <li>{{ course.name }} - {{ course.filiere }} - {{ course.date }}</li>
+    {% endfor %}
+    </ul>
+    <h2>Filières</h2>
+    <ul>
+    {% for filiere in filieres %}
+        <li>{{ filiere.name }}</li>
+    {% endfor %}
+    </ul>
+    <h2>Classrooms</h2>
+    <ul>
+    {% for classroom in classrooms %}
+        <li>{{ classroom.name }} (Capacity: {{ classroom.capacity }})</li>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'add_course' %}">Add Course</a>
+    <a href="{% url 'add_filiere' %}">Add Filiere</a>
+    <a href="{% url 'add_classroom' %}">Add Classroom</a>
+</body>
+</html>
